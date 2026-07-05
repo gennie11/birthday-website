@@ -1,0 +1,542 @@
+/* ------------------ */
+/* GENERAL */
+/* ------------------ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow:auto;
+    background:linear-gradient(180deg,#0d1027,#1a1d45,#2f2458);
+    color:white;
+}
+
+/* ------------------ */
+/* STARRY BACKGROUND */
+/* ------------------ */
+
+#stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+        radial-gradient(white 1px,transparent 1px),
+        radial-gradient(#ffd54f 1px,transparent 1px);
+    background-size:70px 70px,120px 120px;
+    animation:starsMove 80s linear infinite;
+    opacity:.35;
+    z-index:-1;
+}
+
+@keyframes starsMove{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-400px);
+}
+
+}
+
+/* ------------------ */
+/* PAGE */
+/* ------------------ */
+
+.page{
+
+display:none;
+
+min-height:100vh;
+
+padding:40px;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+opacity:0;
+
+transform:translateX(80px);
+
+transition:all .8s ease;
+
+overflow-y:auto;
+
+}
+
+.page.active{
+
+display:flex;
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+.slide-out{
+
+opacity:0;
+
+transform:translateX(-80px);
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.content{
+
+max-width:850px;
+
+}
+
+/* ------------------ */
+/* TYPOGRAPHY */
+/* ------------------ */
+
+h1{
+
+font-family:'Dancing Script',cursive;
+
+font-size:4rem;
+
+color:#FFD54F;
+
+margin-bottom:25px;
+
+text-shadow:0 0 18px rgba(255,213,79,.5);
+
+}
+
+h2{
+
+font-size:2rem;
+
+margin:20px 0;
+
+color:#FFE082;
+
+}
+
+p{
+
+font-size:1.2rem;
+
+line-height:2;
+
+max-width:750px;
+
+margin:auto;
+
+}
+
+.intro-line{
+
+margin:18px 0;
+
+font-size:1.3rem;
+
+}
+
+.journey-title{
+
+font-family:'Dancing Script',cursive;
+
+font-size:1.8rem;
+
+color:#FFE082;
+
+margin-bottom:20px;
+
+text-shadow:0 0 12px rgba(255,213,79,.4);
+
+animation:fade 1.5s;
+
+}
+
+.subtitle{
+
+font-size:1rem;
+
+margin-top:20px;
+
+margin-bottom:35px;
+
+font-style:italic;
+
+color:#F8E7A2;
+
+opacity:.9;
+
+}
+
+.dots{
+
+font-size:2rem;
+
+letter-spacing:10px;
+
+}
+
+/* ------------------ */
+/* PHOTO */
+/* ------------------ */
+
+.photo{
+
+width:340px;
+
+max-width:90%;
+
+border-radius:22px;
+
+border:5px solid rgba(255,255,255,.15);
+
+box-shadow:0 20px 45px rgba(0,0,0,.45);
+
+margin-bottom:35px;
+
+transition:.5s;
+
+}
+
+.photo:hover{
+
+transform:scale(1.03);
+
+}
+/* ------------------ */
+/* BUTTONS */
+/* ------------------ */
+
+button{
+
+margin-top:40px;
+
+padding:15px 45px;
+
+border:none;
+
+border-radius:50px;
+
+background:#FFD54F;
+
+color:#222;
+
+font-size:1rem;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 8px 20px rgba(255,213,79,.25);
+
+}
+
+button:hover{
+
+transform:translateY(-3px) scale(1.05);
+
+box-shadow:0 15px 30px rgba(255,213,79,.45);
+
+}
+
+/* ------------------ */
+/* LETTER */
+/* ------------------ */
+
+.letter{
+
+background:linear-gradient(180deg,#fffdf6,#fff6d9);
+
+color:#5b4321;
+
+}
+
+.letter-card{
+
+background:white;
+
+padding:45px;
+
+border-radius:25px;
+
+max-width:850px;
+
+box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+}
+
+.letter h1{
+
+color:#8d6e63;
+
+margin-bottom:30px;
+
+}
+
+.letter p{
+
+color:#5b4321;
+
+line-height:2;
+
+}
+
+/* ------------------ */
+/* FINAL PAGE */
+/* ------------------ */
+
+.final{
+
+background:linear-gradient(180deg,#3f3209,#856318,#d4a623);
+
+}
+
+.final-end{
+
+background:linear-gradient(180deg,#1b1638,#2b2458,#3b2f75);
+
+}
+
+.final-end b{
+
+color:#FFD54F;
+
+font-size:1.3rem;
+
+text-shadow:0 0 15px rgba(255,213,79,.8);
+
+}
+
+.tap{
+
+margin-top:15px;
+
+font-style:italic;
+
+opacity:.9;
+
+}
+
+#sunflower{
+
+font-size:70px;
+
+cursor:pointer;
+
+margin-top:35px;
+
+transition:.35s;
+
+animation:bounce 2s infinite;
+
+}
+
+#sunflower:hover{
+
+transform:scale(1.25) rotate(10deg);
+
+filter:drop-shadow(0 0 20px gold);
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+/* ------------------ */
+/* SECRET MESSAGE */
+/* ------------------ */
+
+#hiddenMessage{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.82);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+z-index:999;
+
+}
+
+.popup{
+
+background:#fffdf8;
+
+color:#5b4321;
+
+padding:40px;
+
+border-radius:25px;
+
+max-width:700px;
+
+width:100%;
+
+text-align:center;
+
+animation:fade .5s;
+
+box-shadow:0 20px 60px rgba(0,0,0,.4);
+
+}
+
+.popup h2{
+
+font-size:3rem;
+
+margin-bottom:20px;
+
+}
+
+.popup p{
+
+color:#5b4321;
+
+}
+
+/* ------------------ */
+/* MOBILE */
+/* ------------------ */
+
+@media(max-width:768px){
+
+h1{
+
+font-size:2.8rem;
+
+}
+
+h2{
+
+font-size:1.5rem;
+
+}
+
+p{
+
+font-size:1rem;
+
+line-height:1.8;
+
+}
+
+.photo{
+
+width:90%;
+
+}
+
+button{
+
+width:90%;
+
+}
+
+.letter-card{
+
+padding:25px;
+
+}
+
+}
+
+.confetti{
+
+position:fixed;
+
+top:-20px;
+
+width:12px;
+
+height:12px;
+
+border-radius:50%;
+
+animation:confettiFall 5s linear forwards;
+
+z-index:9999;
+
+}
+
+@keyframes confettiFall{
+
+0%{
+
+transform:translateY(-20px) rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(720deg);
+
+opacity:0;
+
+}
+
+}
